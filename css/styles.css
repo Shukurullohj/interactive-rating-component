@@ -34,8 +34,8 @@ body {
   font-family: 'Overpass', "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color: #000;
-  color: #959494;
+  background-color: var(--very-dark-blue);
+  color: var(--light-grey);
 }
 
 img {
@@ -70,7 +70,7 @@ select:-webkit-autofill:focus {
 }*/
 
 *:focus {
-  outline: dashed 2px darkorange;
+  outline: dashed 2px var(--orange);
   outline-offset: 2px;
 }
 
@@ -115,7 +115,7 @@ select:-webkit-autofill:focus {
 
 .button:hover {
   background-color: #fff;
-  color: #000;
+  color: var(--very-dark-blue);
 }
 
 .button:active {
@@ -123,7 +123,7 @@ select:-webkit-autofill:focus {
 }
 
 .button--primary {
-  background-color: darkorange;
+  background-color: var(--orange);
   color: #fff;
 }
 
@@ -149,7 +149,7 @@ select:-webkit-autofill:focus {
   border-radius: 50%;
   width: 60px;
   height: 55px;
-  background-color: #252D37;
+  background-color: var(--medium-gray);
   color: #FFF;;
   font-size: 20px;
   font-weight: 700;
@@ -157,17 +157,18 @@ select:-webkit-autofill:focus {
 }
 
 .star-rating__control:hover {
-  background-color: darkorange;
+  background-color: var(--orange);
 }
 
-.star-rating__control:active {
-  background-color: #959494;
+.star-rating__control:focus ~ .star-rating__control,
+.star-rating__radio:checked ~ .star-rating__control {
+  background-color: var(--orange);
+  color: #fff;
 }
-
 
 /* RATING COMPONENT  */
 .rating-component {
-  background-color: dimgrey;
+  background-color: var(--dark-blue);
   padding: 32px;
   border-radius: 30px;
   width: 100%;
@@ -186,10 +187,21 @@ select:-webkit-autofill:focus {
   height: 100%;
 }
 
+.rating-component__step--out {
+  animation-name: fade-out;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.rating-component__step--in {
+  animation-name: fade-in;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
 .rating-component__inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100%;
 }
 
@@ -200,7 +212,7 @@ select:-webkit-autofill:focus {
   flex-shrink: 0;
   width: 48px;
   height: 48px;
-  background-color: #252D37;
+  background-color: var(--medium-gray);
   border-radius: 50%;
   margin-bottom: 30px;
 }
@@ -226,11 +238,8 @@ select:-webkit-autofill:focus {
 
 .rating-component__form {
   margin-top: 24px;
+  width: 100%;
 }
-
-.rating-component__form-button {
-}
-
 
 .rating-component__inner-center {
   display: flex;
@@ -247,8 +256,8 @@ select:-webkit-autofill:focus {
   padding: 8px 30px;
   margin-bottom: 20px;
   border-radius: 10px;
-  background-color: #959494;
-  color: darkorange;
+  background-color: var(--dark-blue);
+  color: var(--orange);
 
 }
 
@@ -265,6 +274,33 @@ select:-webkit-autofill:focus {
 .main-content {
   flex-grow: 1;
 }
+
+
+/* KEYFRAMES */
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
