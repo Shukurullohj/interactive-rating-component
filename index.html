@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -14,7 +18,7 @@
 
 
   <main class="rating-component">
-    <div class="rating-component__step rating-component__step--active">
+    <div class="rating-component__step">
       <div class="rating-component__inner">
         <div class="rating-component__star-box">
           <img class="rating-component__star-icon" src="img/icon-star.svg" width="
@@ -23,35 +27,38 @@
         <h1 class="rating-component__heading">How did we do?</h1>
         <p class="rating-component__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum facilis suscipit perferendis natus labore? Earum?</p>
         <form class="rating-component__form" action="https://echo.htmlacademy.ru" method="POST">
-          <label class="star-rating__label"  >
-          <input class="star-rating__radio visually-hidden" type="radio" name="rating" value="1" >
-          <span class="star-rating__control">1</span>
-          </label>
-          <label class="star-rating__label"  >
-          <input class="star-rating__radio visually-hidden" type="radio" name="rating" value="2" >
-          <span class="star-rating__control">2</span>
-          </label>
-          <label class="star-rating__label"  >
-          <input class="star-rating__radio visually-hidden" type="radio" name="rating" value="3" >
-          <span class="star-rating__control">3</span>
-          </label>
-          <label class="star-rating__label"  >
-          <input class="star-rating__radio visually-hidden" type="radio" name="rating" value="4" >
-          <span class="star-rating__control">4</span>
-          </label>
-          <label class="star-rating__label"  >
-          <input class="star-rating__radio visually-hidden" type="radio" name="rating" value="5" >
-          <span class="star-rating__control">5</span>
-          </label>
+          <div class="star-rating">
+            <label class="star-rating__label"  >
+              <input class="star-rating__radio visually-hidden" type="radio" name="rating" value="1" >
+              <span class="star-rating__control">1</span>
+              </label>
+              <label class="star-rating__label"  >
+              <input class="star-rating__radio visually-hidden" type="radio" name="rating" value="2" >
+              <span class="star-rating__control">2</span>
+              </label>
+              <label class="star-rating__label"  >
+              <input class="star-rating__radio visually-hidden" type="radio" name="rating" value="3" >
+              <span class="star-rating__control">3</span>
+              </label>
+              <label class="star-rating__label"  >
+              <input class="star-rating__radio visually-hidden" type="radio" name="rating" value="4" >
+              <span class="star-rating__control">4</span>
+              </label>
+              <label class="star-rating__label"  >
+              <input class="star-rating__radio visually-hidden" type="radio" name="rating" value="5" >
+              <span class="star-rating__control">5</span>
+              </label>
+          </div>
           <button class="rating-component__form-button button button--primary button--block" type="submit">Submit</button>
         </form>
       </div>
     </div>
-    <div class="rating-component__step">
-      <div class="rating-component__inner">
+    <div class="rating-component__step--active rating-component__step ">
+      <div class="rating-component__inner rating-component__inner-center">
         <img src="img/illustration-thank-you.svg"  class="rating-component__thanks-icon" width="162" height="107">
-        <h2 class="rating-component__thanks-heading">Thank You!</h2>
-        <p class="rating-component__thanks-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae eos voluptatibus repellendus quis laborum, blanditiis quidem ullam dignissimos quisquam reiciendis.</p>
+        <div class="rating-component__result-msg">You selected <span class="rating-component__result-value">3 </span>out of 5</div>
+        <h2 class="rating-component__heading">Thank You!</h2>
+        <p class="rating-component__thanks-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae eos voluptatibus repellendus quis laborum.</p>
       </div>
     </div>
   </main>
